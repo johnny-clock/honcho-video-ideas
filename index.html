@@ -7,356 +7,133 @@
 <title>Honcho YouTube Ideas | Founder Funnel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
 <style>
 :root{
---bg:#f4f7f8; --surface:#ffffff; --surface-2:#eaf1f3; --text:#061218; --muted:#4d6670;
---line:rgba(16,94,113,.16); --line-strong:rgba(16,94,113,.34); --accent:#1d7d95; --accent-soft:rgba(29,125,149,.09);
---positive:#13804a; --glow1:rgba(29,125,149,.10); --glow2:rgba(29,125,149,.06); --logo-filter:invert(1);
---sans:"Geist","Helvetica Neue","Segoe UI",Arial,sans-serif; --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
---ease:cubic-bezier(.16,1,.3,1);
-box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
---bg:#000000; --surface:#071117; --surface-2:#0a1b23; --text:#f2f7f8; --muted:#91a8b1;
---line:rgba(43,143,168,.18); --line-strong:rgba(43,143,168,.40); --accent:#2b8fa8; --accent-soft:rgba(43,143,168,.10);
---positive:#6de59b; --glow1:rgba(18,105,128,.28); --glow2:rgba(9,78,98,.18); --logo-filter:none;}}
-:root[data-theme="dark"]{
---bg:#000000; --surface:#071117; --surface-2:#0a1b23; --text:#f2f7f8; --muted:#91a8b1;
---line:rgba(43,143,168,.18); --line-strong:rgba(43,143,168,.40); --accent:#2b8fa8; --accent-soft:rgba(43,143,168,.10);
---positive:#6de59b; --glow1:rgba(18,105,128,.28); --glow2:rgba(9,78,98,.18); --logo-filter:none;}
-html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+--paper:#F8F7F3;--ink:#1A1917;--muted:rgba(26,25,23,.62);--rule:rgba(26,25,23,.13);--red:#CA433C;--red-ink:#C33E37;--green:#00B67A;
+--panel:#0D0D0D;--panel-2:#161614;--panel-text:#F8F7F3;--panel-muted:rgba(248,247,243,.60);--panel-rule:rgba(248,247,243,.14);
+--sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"DM Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0D0D0D;--ink:#F8F7F3;--muted:rgba(248,247,243,.62);--rule:rgba(248,247,243,.14);--panel:#161614;--panel-2:#1F1F1C}}
+:root[data-theme="dark"]{--paper:#0D0D0D;--ink:#F8F7F3;--muted:rgba(248,247,243,.62);--rule:rgba(248,247,243,.14);--panel:#161614;--panel-2:#1F1F1C}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow:hidden}
-button,a{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
-.deck{position:relative;height:100%;display:flex;flex-direction:column;
-background:radial-gradient(ellipse 90% 100% at 105% -10%,var(--glow1),transparent 70%),radial-gradient(ellipse 70% 80% at -10% 110%,var(--glow2),transparent 70%),var(--bg)}
-.topbar{flex:none;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(18px,4vw,56px);border-bottom:1px solid var(--line)}
-.logo{height:22px;width:auto;filter:var(--logo-filter);display:block}
-.top-actions{display:flex;align-items:center;gap:10px}
-.counter{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;min-width:44px;text-align:right}
-.btn{border:1px solid var(--line-strong);background:transparent;border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer;transition:background .2s,border-color .2s}
-.btn:hover{background:var(--accent-soft);border-color:var(--accent)}
-.icon-btn{width:36px;height:36px;padding:0;display:grid;place-items:center}
-.icon-btn svg{width:16px;height:16px}
+body{margin:0;height:100%;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;-webkit-font-smoothing:antialiased;overflow:hidden}
+a,button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.deck{height:100%;display:flex;flex-direction:column}
+.top{flex:none;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,64px);border-bottom:1px solid var(--rule)}
+.mark{font-weight:800;font-size:14px;line-height:.92;letter-spacing:.01em;text-transform:uppercase}
+.top-r{display:flex;align-items:center;gap:14px}
+.count{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.cta{background:var(--red);color:#fff;border:0;border-radius:3px;padding:9px 14px;font-size:14px;font-weight:500;cursor:pointer}
+.cta:hover{background:var(--red-ink)}
 .slides{position:relative;flex:1;min-height:0}
-.slide{position:absolute;inset:0;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s .45s}
-.slide.active{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
-.slide-inner{max-width:1360px;margin:0 auto;padding:clamp(24px,4vh,48px) clamp(18px,4vw,56px) 96px}
-.cover{max-width:980px}
-.kicker{color:var(--accent);font-size:14px;font-weight:500;margin:4vh 0 18px}
-h1{font-family:var(--sans);font-weight:600;font-size:clamp(40px,6.4vw,84px);line-height:1;letter-spacing:-.035em;margin:0 0 22px}
-h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--accent)}
-.cover-lede{font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:var(--muted);max-width:62ch;margin:0 0 36px}
-.agenda{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.agenda button{width:100%;display:grid;grid-template-columns:44px 1fr auto;align-items:baseline;gap:16px;padding:18px 4px;background:none;border:0;border-bottom:1px solid var(--line);text-align:left;cursor:pointer}
-.agenda button:hover .ag-t{color:var(--accent)}
-.ag-n{color:var(--muted);font-variant-numeric:tabular-nums}
-.ag-t{font-size:clamp(16px,1.7vw,21px);font-weight:500;letter-spacing:-.01em;transition:color .2s}
-.ag-s{font-variant-numeric:tabular-nums;color:var(--positive);font-weight:600}
-.ag-s::after{content:" title score";color:var(--muted);font-weight:400;font-size:13px}
-.cover-foot{color:var(--muted);font-size:13px;margin:22px 0 0}
-.idea{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,4vw,64px);align-items:start}
-.idea-no{color:var(--accent);font-size:14px;font-weight:500;margin:0 0 14px}
-h2{font-weight:600;font-size:clamp(28px,3.1vw,44px);line-height:1.07;letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance}
-.lede{font-size:clamp(16px,1.35vw,18px);line-height:1.55;color:var(--muted);margin:0 0 26px;max-width:58ch}
-.scores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
-.sc{padding:16px 18px;border-left:1px solid var(--line)}
-.sc:first-child{border-left:0}
-.sc dt{font-size:12.5px;color:var(--muted);margin-bottom:6px}
-.sc dd{margin:0;font-size:clamp(26px,2.4vw,34px);font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.sc dd small{font-size:13px;font-weight:400;color:var(--muted);letter-spacing:0;margin-left:2px}
-.sc-main dd{color:var(--positive)}
-.demand-note{font-size:13px;color:var(--muted);margin:10px 2px 26px}
-.blocks{display:grid;gap:20px}
-.blocks h3{font-size:14px;font-weight:600;margin:0 0 6px}
-.blocks p{margin:0;font-size:15.5px;line-height:1.6;max-width:62ch}
-.q p{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.3;color:var(--accent)}
-.proof{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(16px,1.8vw,24px)}
-.proof-head{display:flex;justify-content:space-between;align-items:baseline;margin:0 4px 12px}
-.proof-head h3{font-size:15px;font-weight:600;margin:0}
-.proof-head span{font-size:13px;color:var(--muted)}
+.slide{position:absolute;inset:0;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s}
+.slide.on{opacity:1;visibility:visible;transition:opacity .4s ease}
+.inner{max-width:1280px;margin:0 auto;padding:clamp(28px,5vh,56px) clamp(20px,5vw,64px) 104px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,4.5vw,72px);align-items:start}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--red-ink);margin:0 0 18px}
+h2{font-weight:700;font-size:clamp(30px,3.4vw,48px);line-height:1.04;letter-spacing:-.04em;margin:0 0 18px;text-wrap:balance}
+.lede{font-size:clamp(16px,1.4vw,19px);line-height:1.55;color:var(--muted);margin:0 0 28px;max-width:56ch}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:0 0 8px}
+.stat{padding:16px 0 14px;border-left:1px solid var(--rule);padding-left:18px}
+.stat:first-child{border-left:0;padding-left:0}
+.stat dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.stat dd{margin:0;font-weight:700;font-size:clamp(28px,2.6vw,38px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.stat dd small{font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:2px}
+.stat .g{color:var(--green)}
+.dnote{font-size:13px;color:var(--muted);margin:0 0 30px}
+.blk{margin:0 0 22px}
+.blk h3{font-size:15px;font-weight:700;margin:0 0 6px}
+.blk p{margin:0;font-size:16px;line-height:1.6;max-width:60ch}
+.ask{border-left:3px solid var(--red);padding:4px 0 4px 16px}
+.ask p{font-size:19px;font-weight:500;letter-spacing:-.01em}
+.proof{background:var(--panel);color:var(--panel-text);border-radius:10px;padding:clamp(16px,2vw,24px)}
+.ph{display:flex;justify-content:space-between;align-items:baseline;margin:2px 4px 14px}
+.ph h3{font-size:16px;font-weight:700;margin:0}
+.ph span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--panel-muted)}
 .refs{display:grid;gap:8px}
-.ref{display:grid;grid-template-columns:168px 1fr;gap:16px;align-items:center;padding:10px 14px 10px 10px;border-radius:14px;border:1px solid transparent;background:var(--surface-2);text-decoration:none;transition:border-color .2s,background .2s}
-.thumb{position:relative;display:block;aspect-ratio:16/9;border-radius:9px;overflow:hidden;background:var(--accent-soft)}
-.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.thumb-x{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 12px}
-.thumb-x strong{font-size:26px;font-weight:600;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1}
-.thumb-x span{font-size:11.5px;color:var(--muted)}
-.badge{display:none;position:absolute;left:6px;bottom:6px;background:rgba(0,0,0,.82);color:#6de59b;font-size:12.5px;font-weight:600;padding:3px 7px;border-radius:6px;font-variant-numeric:tabular-nums}
-.thumb.has-img .badge{display:block}
-.thumb.has-img .thumb-x{visibility:hidden}
-.ref:hover{border-color:var(--line-strong)}
-.ref.is-source{border-color:var(--accent);background:var(--accent-soft)}
-.ref-body{display:grid;gap:6px;min-width:0}
-.src-tag{justify-self:start;font-size:11.5px;font-weight:600;color:var(--bg);background:var(--accent);padding:3px 8px;border-radius:999px}
-.ref-title{font-size:15px;font-weight:500;line-height:1.3}
-.ref-meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--muted)}
-.ref-meta span:first-child{color:var(--text);opacity:.8}
-.proof-note{font-size:12.5px;color:var(--muted);margin:14px 4px 0;line-height:1.5}
-.navbar{position:fixed;left:0;right:0;bottom:0;padding:12px clamp(18px,4vw,56px) calc(12px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(to top,var(--bg) 55%,transparent);pointer-events:none}
-.navbar>*{pointer-events:auto}
-.dots{display:flex;gap:6px;flex-wrap:wrap}
-.dot{border:1px solid var(--line-strong);background:transparent;border-radius:999px;padding:6px 12px;font-size:12.5px;color:var(--muted);cursor:pointer}
-.dot[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.ref{display:grid;grid-template-columns:176px 1fr;gap:16px;align-items:center;padding:10px;border-radius:8px;background:var(--panel-2);border:1px solid transparent;text-decoration:none;transition:border-color .2s}
+.ref:hover{border-color:var(--panel-rule)}
+.ref.src{border-color:rgba(0,182,122,.55)}
+.th{position:relative;display:block;aspect-ratio:16/9;border-radius:5px;overflow:hidden;background:#24241f}
+.th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.x{position:absolute;left:6px;top:6px;background:var(--green);color:#04130d;font-weight:800;font-size:17px;letter-spacing:-.02em;line-height:1;padding:5px 8px;border-radius:4px;font-variant-numeric:tabular-nums;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.rb{display:grid;gap:6px;min-width:0}
+.big{display:flex;align-items:baseline;gap:8px}
+.big strong{font-size:28px;font-weight:800;color:var(--green);letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums}
+.big span{font-size:12.5px;color:var(--panel-muted)}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);border:1px solid rgba(0,182,122,.5);border-radius:3px;padding:2px 6px;margin-left:auto;white-space:nowrap}
+.rt{font-size:15px;font-weight:500;line-height:1.3}
+.rm{display:flex;flex-wrap:wrap;gap:3px 14px;font-size:12.5px;color:var(--panel-muted)}
+.rm span:first-child{color:var(--panel-text);opacity:.85}
+.pn{font-size:12.5px;color:var(--panel-muted);margin:14px 4px 2px;line-height:1.5}
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px clamp(20px,5vw,64px) calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--paper) 60%,transparent);pointer-events:none}
+.nav>*{pointer-events:auto}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{border:1px solid var(--rule);background:var(--paper);border-radius:3px;padding:7px 12px;font-size:13px;cursor:pointer;color:var(--muted)}
+.tab b{font-family:var(--mono);font-weight:500;margin-right:6px}
+.tab[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .arrows{display:flex;gap:8px}
-.slide.active .copy,.slide.active .cover>*{animation:rise .6s var(--ease) both}
-.slide.active .proof{animation:rise .6s .08s var(--ease) both}
-@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ar{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--rule);background:var(--paper);border-radius:3px;cursor:pointer}
+.ar:hover{border-color:var(--ink)}
+.ar svg{width:16px;height:16px}
+.on .copy,.on .proof{animation:up .5s cubic-bezier(.16,1,.3,1) both}
+.on .proof{animation-delay:.06s}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media (max-width:980px){
-.idea{grid-template-columns:1fr}
-.dots .dot span{display:none}
-}
-@media (max-width:560px){
-.scores{grid-template-columns:1fr 1fr}
-.sc:nth-child(3){grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
-.ref{grid-template-columns:120px 1fr;gap:12px;padding:8px 10px 8px 8px}
-.thumb-x strong{font-size:20px}
-.agenda button{grid-template-columns:28px 1fr}
-.ag-s{grid-column:2}
-.present-btn{display:none}
-.dot{padding:6px 10px}
-}
+@media (max-width:980px){.inner{grid-template-columns:1fr}.tab span{display:none}}
+@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){grid-column:1/-1;border-left:0;padding-left:0;border-top:1px solid var(--rule)}
+.ref{grid-template-columns:116px 1fr;gap:12px;padding:8px}.x{font-size:14px;padding:4px 6px}.big strong{font-size:22px}.tag{display:none}.cta{display:none}}
 </style>
 </head>
 <body>
 <main class="deck">
-<header class="topbar">
-<img class="logo" alt="Founder Funnel" src="https://johnny-clock.github.io/ansh-vibecode-video-ideas/assets/founder-funnel-logo.png">
-<div class="top-actions">
-<span class="counter" id="counter" aria-live="polite">1 / 5</span>
-<button class="btn icon-btn" id="themeBtn" type="button" aria-label="Switch light or dark">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-</button>
-<button class="btn present-btn" id="presentBtn" type="button">Present</button>
-</div>
+<header class="top">
+<div class="mark" aria-label="Founder Funnel">Founder<br>Funnel</div>
+<div class="top-r"><span class="count" id="count">1 / 4</span><button class="cta" id="present" type="button">Present</button></div>
 </header>
-<div class="slides" id="slides"><section class="slide active" data-title="Overview" aria-hidden="false">
-<div class="slide-inner cover">
-<p class="kicker">Honcho · Idea presentation</p>
-<h1>Four ideas people <em>already</em> want.</h1>
-<p class="cover-lede">Each title adapts a format that is outperforming right now on small channels, checked against what you told us on the onboarding call: Hermes first, calm and factual, built around the questions your users actually ask.</p>
-<ol class="agenda"><li><button type="button" data-go="1"><span class="ag-n">1</span><span class="ag-t">How to Make Your Hermes Agent 10x Smarter With Memory (Full Guide)</span><span class="ag-s">92</span></button></li><li><button type="button" data-go="2"><span class="ag-n">2</span><span class="ag-t">5 Agent Memory Use Cases Most Hermes Users Don’t Know About</span><span class="ag-s">95</span></button></li><li><button type="button" data-go="3"><span class="ag-n">3</span><span class="ag-t">The Most Overlooked Part of AI Agents: Memory Explained</span><span class="ag-s">92</span></button></li><li><button type="button" data-go="4"><span class="ag-n">4</span><span class="ag-t">The Missing Link in Hermes Agent: Why You Need a Memory Layer</span><span class="ag-s">92</span></button></li></ol>
-<p class="cover-foot">Scores and outliers from vidIQ, pulled 2–3 October 2026. Titles are drafts until you sign them off.</p>
-</div>
-</section><section class="slide" data-title="Hermes memory guide" aria-hidden="true">
-<div class="slide-inner idea">
-<div class="copy">
-<p class="idea-no">Idea 1 of 4</p>
-<h2>How to Make Your Hermes Agent 10x Smarter With Memory (Full Guide)</h2>
-<p class="lede">A start-to-finish walkthrough: set up Hermes, add a memory layer, and tune it so the agent remembers how you work.</p>
-<dl class="scores">
-<div class="sc sc-main"><dt>vidIQ title score</dt><dd>92<small>/100</small></dd></div>
-<div class="sc"><dt>Best reference</dt><dd>15.47x</dd></div>
-<div class="sc"><dt>Search demand</dt><dd>169K<small>/mo</small></dd></div>
-</dl>
-<p class="demand-note">monthly searches for “hermes agent tutorial”, low competition</p>
-<div class="blocks">
-<div><h3>Why this idea works</h3><p>Hermes is already where a fifth of Honcho’s users come from, and Honcho is one of the first memory options people see during Hermes setup. Full-guide tutorials are the most repeatable format on small AI channels right now, and Hermes tutorial searches are high with little competition.</p></div>
-<div><h3>What we’d cover</h3><p>Install and connect memory, a before-and-after with memory on, the settings that matter for your setup, and a first-week checklist.</p></div>
-<div class="q"><h3>The customer question it answers</h3><p>“How do I set it up, and am I optimizing it correctly?”</p></div>
-</div>
-</div>
-<aside class="proof" aria-label="Outlier references for idea 1">
-<div class="proof-head"><h3>Outliers behind this title</h3><span>6 videos</span></div>
-<div class="refs"><a class="ref is-source" href="https://youtube.com/watch?v=MFi3RUGzwtM" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>13.85x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/MFi3RUGzwtM/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">13.85x</span></span>
-<span class="ref-body"><span class="src-tag">Title format source</span><span class="ref-title">How to Make Hermes Agent 10x More Powerful (Memory &amp; Skills)</span>
-<span class="ref-meta"><span>The AI Architects | Tom Crawshaw</span><span>19.9K subs</span><span>31.7K views</span><span>27 Jul</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=6CaQ9ZFuuKI" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>15.47x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/6CaQ9ZFuuKI/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">15.47x</span></span>
-<span class="ref-body"><span class="ref-title">Claude Code: The Complete AI-Native SDLC Guide</span>
-<span class="ref-meta"><span>Eric Tech</span><span>81.4K subs</span><span>136.3K views</span><span>20 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=HTAjKhgmIi4" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>10.71x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/HTAjKhgmIi4/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">10.71x</span></span>
-<span class="ref-body"><span class="ref-title">Hermes Agent - Full Tutorial &amp; Setup Guide (AI Business Partner for Beginners)</span>
-<span class="ref-meta"><span>Jacques Hopkins</span><span>2.9K subs</span><span>2.3K views</span><span>24 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=Fhm8goKN6rM" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>9.54x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/Fhm8goKN6rM/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">9.54x</span></span>
-<span class="ref-body"><span class="ref-title">How to build a JARVIS AI Voice Agent for FREE | Full Livekit Tutorial (2026)</span>
-<span class="ref-meta"><span>Thanh-y David Nguyen</span><span>13.8K subs</span><span>107.5K views</span><span>12 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=NGRZ2wrmK3Q" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>7.14x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/NGRZ2wrmK3Q/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">7.14x</span></span>
-<span class="ref-body"><span class="ref-title">Master Copilot Agents in 34 Minutes (Full Tutorial)</span>
-<span class="ref-meta"><span>David Fortin</span><span>32.5K subs</span><span>45.8K views</span><span>17 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=vsaw-IyHgtE" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>4.79x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/vsaw-IyHgtE/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">4.79x</span></span>
-<span class="ref-body"><span class="ref-title">Upgrade Your Hermes Agent with Web UI + AI Memory</span>
-<span class="ref-meta"><span>ZazenCodes</span><span>18.1K subs</span><span>22.7K views</span><span>20 Jul</span></span></span>
-</a></div>
-<p class="proof-note">Channels under 100K subscribers, published in the last 3 months. Multiplier is views against that channel’s normal. Tap any video to open it.</p>
-</aside>
-</div>
-</section><section class="slide" data-title="Memory use cases" aria-hidden="true">
-<div class="slide-inner idea">
-<div class="copy">
-<p class="idea-no">Idea 2 of 4</p>
-<h2>5 Agent Memory Use Cases Most Hermes Users Don’t Know About</h2>
-<p class="lede">Five practical ways to get more out of agent memory, each shown live in a real Hermes setup.</p>
-<dl class="scores">
-<div class="sc sc-main"><dt>vidIQ title score</dt><dd>95<small>/100</small></dd></div>
-<div class="sc"><dt>Best reference</dt><dd>13.05x</dd></div>
-<div class="sc"><dt>Search demand</dt><dd>56K<small>/mo</small></dd></div>
-</dl>
-<p class="demand-note">monthly searches for “hermes agent use cases”, moderate competition</p>
-<div class="blocks">
-<div><h3>Why this idea works</h3><p>It answers the question Honcho users keep asking: am I using this enough? The “most people don’t know about” list is breaking out on small channels in neighbouring AI niches, and use cases are where Hermes viewers already spend their time.</p></div>
-<div><h3>What we’d cover</h3><p>Five use cases from Vince’s own setup. For each one: what it does, how to switch it on, and what it looks like after a week of use.</p></div>
-<div class="q"><h3>The customer question it answers</h3><p>“Am I using it enough, and how else can I use it?”</p></div>
-</div>
-</div>
-<aside class="proof" aria-label="Outlier references for idea 2">
-<div class="proof-head"><h3>Outliers behind this title</h3><span>5 videos</span></div>
-<div class="refs"><a class="ref is-source" href="https://youtube.com/watch?v=1UNlNYyMR70" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>13.05x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/1UNlNYyMR70/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">13.05x</span></span>
-<span class="ref-body"><span class="src-tag">Title format source</span><span class="ref-title">10 Powerful AI Sites Most People Don&#x27;t Know About</span>
-<span class="ref-meta"><span>Cool Dude Explains</span><span>11.5K subs</span><span>143.3K views</span><span>26 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=eo0As3rieA8" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>12.98x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/eo0As3rieA8/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">12.98x</span></span>
-<span class="ref-body"><span class="ref-title">Best AI agent harnesses and how I use them (pi, omp, Zcode)</span>
-<span class="ref-meta"><span>0xSero</span><span>10.2K subs</span><span>63.5K views</span><span>2 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=9b31dDLTQQ0" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>7.52x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/9b31dDLTQQ0/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">7.52x</span></span>
-<span class="ref-body"><span class="ref-title">Hermes Agent Update v0.21 is MASSIVE! (Pantheon Release)</span>
-<span class="ref-meta"><span>Superbash (BoxminingAI)</span><span>15.3K subs</span><span>29.3K views</span><span>1 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=WU8RVxQ8HdE" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>6.29x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/WU8RVxQ8HdE/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">6.29x</span></span>
-<span class="ref-body"><span class="ref-title">Hermes Agent Bot Mode Guide (Setup and Workflows)</span>
-<span class="ref-meta"><span>Superbash (BoxminingAI)</span><span>15.3K subs</span><span>32.8K views</span><span>14 Aug</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=QjCyqvXOh10" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>2.54x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/QjCyqvXOh10/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">2.54x</span></span>
-<span class="ref-body"><span class="ref-title">The AI Skills Giving Ordinary People an Unfair Advantage</span>
-<span class="ref-meta"><span>Chill Dudes Stories</span><span>15.2K subs</span><span>16.9K views</span><span>4 Sep</span></span></span>
-</a></div>
-<p class="proof-note">Channels under 100K subscribers, published in the last 3 months. Multiplier is views against that channel’s normal. Tap any video to open it.</p>
-</aside>
-</div>
-</section><section class="slide" data-title="Memory explained" aria-hidden="true">
-<div class="slide-inner idea">
-<div class="copy">
-<p class="idea-no">Idea 3 of 4</p>
-<h2>The Most Overlooked Part of AI Agents: Memory Explained</h2>
-<p class="lede">A plain-language explainer of where memory sits inside an agent, why most setups get it wrong, and how to tell whether yours is working.</p>
-<dl class="scores">
-<div class="sc sc-main"><dt>vidIQ title score</dt><dd>92<small>/100</small></dd></div>
-<div class="sc"><dt>Best reference</dt><dd>16.88x</dd></div>
-<div class="sc"><dt>Search demand</dt><dd>13K<small>/mo</small></dd></div>
-</dl>
-<p class="demand-note">monthly searches for “ai agent memory”, built mainly for browse and suggested</p>
-<div class="blocks">
-<div><h3>Why this idea works</h3><p>It answers the first thing customers ask: I can’t tell if it’s working. Explainers framed around the most overlooked or most important piece are outperforming, and Honcho can show what competitors can’t: its own evals, benchmarks and memory visualisations.</p></div>
-<div><h3>What we’d cover</h3><p>How an agent harness uses memory, built-in versus dedicated memory, how to check it’s working with evals and the dashboard, and the common mistakes.</p></div>
-<div class="q"><h3>The customer question it answers</h3><p>“I can’t tell if it’s working. How do I know?”</p></div>
-</div>
-</div>
-<aside class="proof" aria-label="Outlier references for idea 3">
-<div class="proof-head"><h3>Outliers behind this title</h3><span>6 videos</span></div>
-<div class="refs"><a class="ref is-source" href="https://youtube.com/watch?v=MltkRz94SWA" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>5.27x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/MltkRz94SWA/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">5.27x</span></span>
-<span class="ref-body"><span class="src-tag">Title format source</span><span class="ref-title">The Most Important Skill for AI Engineers: Evals Explained</span>
-<span class="ref-meta"><span>Aish Reganti</span><span>9.7K subs</span><span>67.7K views</span><span>17 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=AuK5s66YXaY" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>16.88x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/AuK5s66YXaY/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">16.88x</span></span>
-<span class="ref-body"><span class="ref-title">I Traced One Request Through an AI Agent (Step by Step)</span>
-<span class="ref-meta"><span>Shikha Bahirani - The AI Architect</span><span>1.2K subs</span><span>4.3K views</span><span>20 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=YD2LzEaavEw" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>12.56x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/YD2LzEaavEw/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">12.56x</span></span>
-<span class="ref-body"><span class="ref-title">Vectorize-io/hindsight – Hindsight: Agent Memory That Learns</span>
-<span class="ref-meta"><span>Signal Coders</span><span>2.5K subs</span><span>13.6K views</span><span>27 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=E4gkCE6_xiQ" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>6.84x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/E4gkCE6_xiQ/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">6.84x</span></span>
-<span class="ref-body"><span class="ref-title">Agent Harness Explained in 6 Minutes: The Next Big Thing in AI</span>
-<span class="ref-meta"><span>Cloud X Berry</span><span>42.2K subs</span><span>39.1K views</span><span>28 Aug</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=n9CSSSir3fE" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>6.24x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/n9CSSSir3fE/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">6.24x</span></span>
-<span class="ref-body"><span class="ref-title">Claude Code Skills from First Principles</span>
-<span class="ref-meta"><span>Agentic Lab</span><span>8.7K subs</span><span>19.8K views</span><span>15 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=GhGEFHiB2RQ" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>3.46x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/GhGEFHiB2RQ/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">3.46x</span></span>
-<span class="ref-body"><span class="ref-title">How an AI Agent Works - A Full Dissection - Simplified</span>
-<span class="ref-meta"><span>Rob Braxman Tech Deep Dive</span><span>8.8K subs</span><span>22.7K views</span><span>28 Aug</span></span></span>
-</a></div>
-<p class="proof-note">Channels under 100K subscribers, published in the last 3 months. Multiplier is views against that channel’s normal. Tap any video to open it.</p>
-</aside>
-</div>
-</section><section class="slide" data-title="Why a memory layer" aria-hidden="true">
-<div class="slide-inner idea">
-<div class="copy">
-<p class="idea-no">Idea 4 of 4</p>
-<h2>The Missing Link in Hermes Agent: Why You Need a Memory Layer</h2>
-<p class="lede">An honest look at what Hermes remembers on its own, where that runs out, and what a dedicated memory layer adds.</p>
-<dl class="scores">
-<div class="sc sc-main"><dt>vidIQ title score</dt><dd>92<small>/100</small></dd></div>
-<div class="sc"><dt>Best reference</dt><dd>12.94x</dd></div>
-<div class="sc"><dt>Search demand</dt><dd>5.1K<small>/mo</small></dd></div>
-</dl>
-<p class="demand-note">monthly searches for “hermes agent memory provider”, low competition</p>
-<div class="blocks">
-<div><h3>Why this idea works</h3><p>It takes on Honcho’s real competitor, people sticking with built-in or home-made memory, in the brand’s calm, factual tone. Memory-layer videos are breaking out on very small channels, which shows this audience is actively comparing options.</p></div>
-<div><h3>What we’d cover</h3><p>What Hermes remembers out of the box, where it falls short with a real example, what a memory layer changes, and when you don’t need one.</p></div>
-<div class="q"><h3>The customer question it answers</h3><p>“Why not just use the built-in memory?”</p></div>
-</div>
-</div>
-<aside class="proof" aria-label="Outlier references for idea 4">
-<div class="proof-head"><h3>Outliers behind this title</h3><span>5 videos</span></div>
-<div class="refs"><a class="ref is-source" href="https://youtube.com/watch?v=zazSemqmygw" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>3.84x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/zazSemqmygw/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">3.84x</span></span>
-<span class="ref-body"><span class="src-tag">Title format source</span><span class="ref-title">The Missing Link in AI Agents: Why You Need Graph Memory</span>
-<span class="ref-meta"><span>Nodus Labs</span><span>45.3K subs</span><span>14.8K views</span><span>17 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=1mCcV5ICGdU" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>12.94x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/1mCcV5ICGdU/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">12.94x</span></span>
-<span class="ref-body"><span class="ref-title">TencentDB Agent Memory Explained [Team Brain for AI Agents]</span>
-<span class="ref-meta"><span>Prism Labs</span><span>4.3K subs</span><span>1.9K views</span><span>5 Aug</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=lUhXa8GiXns" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>11.2x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/lUhXa8GiXns/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">11.2x</span></span>
-<span class="ref-body"><span class="ref-title">Pstack Is Agent Overkill. Use It Anyway!</span>
-<span class="ref-meta"><span>Rob Shocks</span><span>52.1K subs</span><span>84.4K views</span><span>8 Sep</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=P-458yO0eak" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>8.18x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/P-458yO0eak/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">8.18x</span></span>
-<span class="ref-body"><span class="ref-title">Build Your Own Context Database — Two Repos Are Fixing Agent Memory</span>
-<span class="ref-meta"><span>Signal Coders</span><span>2.5K subs</span><span>4.9K views</span><span>19 Aug</span></span></span>
-</a><a class="ref" href="https://youtube.com/watch?v=5AkurBDSYwo" target="_blank" rel="noreferrer">
-<span class="thumb"><span class="thumb-x"><strong>5.79x</strong><span>their usual views</span></span><img src="https://i.ytimg.com/vi/5AkurBDSYwo/hqdefault.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="badge">5.79x</span></span>
-<span class="ref-body"><span class="ref-title">China Just Open-Sourced Humanlike Memory for AI Agents (Tencent DB)</span>
-<span class="ref-meta"><span>Cloud Codes</span><span>40.8K subs</span><span>49.5K views</span><span>2 Aug</span></span></span>
-</a></div>
-<p class="proof-note">Channels under 100K subscribers, published in the last 3 months. Multiplier is views against that channel’s normal. Tap any video to open it.</p>
-</aside>
-</div>
-</section></div>
-<nav class="navbar" aria-label="Slides">
-<div class="dots" id="dots"></div>
-<div class="arrows">
-<button class="btn icon-btn" id="prev" type="button" aria-label="Previous idea"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
-<button class="btn icon-btn" id="next" type="button" aria-label="Next idea"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
-</div>
-</nav>
+<div class="slides" id="slides"></div>
+<nav class="nav" aria-label="Ideas"><div class="tabs" id="tabs"></div>
+<div class="arrows"><button class="ar" id="prev" type="button" aria-label="Previous idea"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button><button class="ar" id="next" type="button" aria-label="Next idea"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button></div></nav>
 </main>
 <script>
+var D=[{"t":"How to Make Your Hermes Agent 10x Smarter With Memory (Full Guide)","s":92,"sh":"Hermes memory guide","l":"A start-to-finish walkthrough: set up Hermes, add a memory layer, and tune it so the agent remembers how you work.","dm":"169K","dn":"monthly searches for “hermes agent tutorial”, low competition","w":"Hermes is already where a fifth of Honcho’s users come from, and Honcho is one of the first memory options people see during Hermes setup. Full-guide tutorials are the most repeatable format on small AI channels right now, and Hermes tutorial searches are high with little competition.","c":"Install and connect memory, a before-and-after with memory on, the settings that matter for your setup, and a first-week checklist.","q":"How do I set it up, and am I optimizing it correctly?","r":[["MFi3RUGzwtM","How to Make Hermes Agent 10x More Powerful (Memory & Skills)","The AI Architects | Tom Crawshaw","19.9K","31.7K","13.85","27 Jul",1],["6CaQ9ZFuuKI","Claude Code: The Complete AI-Native SDLC Guide","Eric Tech","81.4K","136.3K","15.47","20 Sep",0],["HTAjKhgmIi4","Hermes Agent - Full Tutorial & Setup Guide (AI Business Partner for Beginners)","Jacques Hopkins","2.9K","2.3K","10.71","24 Sep",0],["Fhm8goKN6rM","How to build a JARVIS AI Voice Agent for FREE | Full Livekit Tutorial (2026)","Thanh-y David Nguyen","13.8K","107.5K","9.54","12 Sep",0],["NGRZ2wrmK3Q","Master Copilot Agents in 34 Minutes (Full Tutorial)","David Fortin","32.5K","45.8K","7.14","17 Sep",0],["vsaw-IyHgtE","Upgrade Your Hermes Agent with Web UI + AI Memory","ZazenCodes","18.1K","22.7K","4.79","20 Jul",0]]},{"t":"5 Agent Memory Use Cases Most Hermes Users Don’t Know About","s":95,"sh":"Memory use cases","l":"Five practical ways to get more out of agent memory, each shown live in a real Hermes setup.","dm":"56K","dn":"monthly searches for “hermes agent use cases”, moderate competition","w":"It answers the question Honcho users keep asking: am I using this enough? The “most people don’t know about” list is breaking out on small channels in neighbouring AI niches, and use cases are where Hermes viewers already spend their time.","c":"Five use cases from Vince’s own setup. For each one: what it does, how to switch it on, and what it looks like after a week of use.","q":"Am I using it enough, and how else can I use it?","r":[["1UNlNYyMR70","10 Powerful AI Sites Most People Don't Know About","Cool Dude Explains","11.5K","143.3K","13.05","26 Sep",1],["eo0As3rieA8","Best AI agent harnesses and how I use them (pi, omp, Zcode)","0xSero","10.2K","63.5K","12.98","2 Sep",0],["9b31dDLTQQ0","Hermes Agent Update v0.21 is MASSIVE! (Pantheon Release)","Superbash (BoxminingAI)","15.3K","29.3K","7.52","1 Sep",0],["WU8RVxQ8HdE","Hermes Agent Bot Mode Guide (Setup and Workflows)","Superbash (BoxminingAI)","15.3K","32.8K","6.29","14 Aug",0],["QjCyqvXOh10","The AI Skills Giving Ordinary People an Unfair Advantage","Chill Dudes Stories","15.2K","16.9K","2.54","4 Sep",0]]},{"t":"The Most Overlooked Part of AI Agents: Memory Explained","s":92,"sh":"Memory explained","l":"A plain-language explainer of where memory sits inside an agent, why most setups get it wrong, and how to tell whether yours is working.","dm":"13K","dn":"monthly searches for “ai agent memory”, built mainly for browse and suggested","w":"It answers the first thing customers ask: I can’t tell if it’s working. Explainers framed around the most overlooked or most important piece are outperforming, and Honcho can show what competitors can’t: its own evals, benchmarks and memory visualisations.","c":"How an agent harness uses memory, built-in versus dedicated memory, how to check it’s working with evals and the dashboard, and the common mistakes.","q":"I can’t tell if it’s working. How do I know?","r":[["MltkRz94SWA","The Most Important Skill for AI Engineers: Evals Explained","Aish Reganti","9.7K","67.7K","5.27","17 Sep",1],["AuK5s66YXaY","I Traced One Request Through an AI Agent (Step by Step)","Shikha Bahirani - The AI Architect","1.2K","4.3K","16.88","20 Sep",0],["YD2LzEaavEw","Vectorize-io/hindsight – Hindsight: Agent Memory That Learns","Signal Coders","2.5K","13.6K","12.56","27 Sep",0],["E4gkCE6_xiQ","Agent Harness Explained in 6 Minutes: The Next Big Thing in AI","Cloud X Berry","42.2K","39.1K","6.84","28 Aug",0],["n9CSSSir3fE","Claude Code Skills from First Principles","Agentic Lab","8.7K","19.8K","6.24","15 Sep",0],["GhGEFHiB2RQ","How an AI Agent Works - A Full Dissection - Simplified","Rob Braxman Tech Deep Dive","8.8K","22.7K","3.46","28 Aug",0]]},{"t":"The Missing Link in Hermes Agent: Why You Need a Memory Layer","s":92,"sh":"Why a memory layer","l":"An honest look at what Hermes remembers on its own, where that runs out, and what a dedicated memory layer adds.","dm":"5.1K","dn":"monthly searches for “hermes agent memory provider”, low competition","w":"It takes on Honcho’s real competitor, people sticking with built-in or home-made memory, in the brand’s calm, factual tone. Memory-layer videos are breaking out on very small channels, which shows this audience is actively comparing options.","c":"What Hermes remembers out of the box, where it falls short with a real example, what a memory layer changes, and when you don’t need one.","q":"Why not just use the built-in memory?","r":[["zazSemqmygw","The Missing Link in AI Agents: Why You Need Graph Memory","Nodus Labs","45.3K","14.8K","3.84","17 Sep",1],["1mCcV5ICGdU","TencentDB Agent Memory Explained [Team Brain for AI Agents]","Prism Labs","4.3K","1.9K","12.94","5 Aug",0],["lUhXa8GiXns","Pstack Is Agent Overkill. Use It Anyway!","Rob Shocks","52.1K","84.4K","11.2","8 Sep",0],["P-458yO0eak","Build Your Own Context Database — Two Repos Are Fixing Agent Memory","Signal Coders","2.5K","4.9K","8.18","19 Aug",0],["5AkurBDSYwo","China Just Open-Sourced Humanlike Memory for AI Agents (Tencent DB)","Cloud Codes","40.8K","49.5K","5.79","2 Aug",0]]}];
 (function(){
-const slides=[...document.querySelectorAll('.slide')], dots=document.getElementById('dots'), counter=document.getElementById('counter');
-let i=0;
-slides.forEach((s,n)=>{const b=document.createElement('button');b.className='dot';b.type='button';
-b.innerHTML=n===0?'Overview':(n+'<span> · '+s.dataset.title+'</span>');b.setAttribute('aria-label',s.dataset.title);b.onclick=()=>go(n);dots.appendChild(b);});
-function go(n){n=Math.max(0,Math.min(slides.length-1,n));if(n===i&&slides[i].classList.contains('active'))return;
-slides.forEach((s,k)=>{const on=k===n;s.classList.toggle('active',on);s.setAttribute('aria-hidden',on?'false':'true');if(on)s.scrollTop=0;});
-[...dots.children].forEach((d,k)=>d.setAttribute('aria-current',k===n?'true':'false'));
-counter.textContent=(n+1)+' / '+slides.length;i=n;
-try{history.replaceState(null,'','#'+n)}catch(e){}}
-document.getElementById('prev').onclick=()=>go(i-1);
-document.getElementById('next').onclick=()=>go(i+1);
-document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(+b.dataset.go));
-document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')go(i+1);if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);});
-let x0=null,y0=null;document.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
-document.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)go(dx<0?i+1:i-1);x0=null},{passive:true});
-document.getElementById('presentBtn').onclick=()=>{const d=document.documentElement;if(!document.fullscreenElement){d.requestFullscreen&&d.requestFullscreen().catch(()=>{})}else{document.exitFullscreen()}};
-const root=document.documentElement;
-try{const t=localStorage.getItem('ff-theme');if(t)root.dataset.theme=t;}catch(e){}
-document.getElementById('themeBtn').onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
-root.dataset.theme=dark?'light':'dark';try{localStorage.setItem('ff-theme',root.dataset.theme)}catch(e){}};
-const h=parseInt(location.hash.slice(1),10);i=-1;go(isNaN(h)?0:h);
+function e(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+var S=document.getElementById('slides'),T=document.getElementById('tabs'),C=document.getElementById('count'),h='';
+D.forEach(function(d,n){
+var best=Math.max.apply(null,d.r.map(function(r){return parseFloat(r[5])}));
+h+='<section class="slide" aria-hidden="true"><div class="inner"><div class="copy">'+
+'<p class="eyebrow">Honcho · Idea '+(n+1)+' of '+D.length+'</p><h2>'+e(d.t)+'</h2><p class="lede">'+e(d.l)+'</p>'+
+'<dl class="stats"><div class="stat"><dt>vidIQ title score</dt><dd>'+d.s+'<small>/100</small></dd></div>'+
+'<div class="stat"><dt>Best outlier</dt><dd class="g">'+best+'x</dd></div>'+
+'<div class="stat"><dt>Search demand</dt><dd>'+d.dm+'<small>/mo</small></dd></div></dl>'+
+'<p class="dnote">'+e(d.dn)+'</p>'+
+'<div class="blk"><h3>Why this idea works</h3><p>'+e(d.w)+'</p></div>'+
+'<div class="blk"><h3>What we’d cover</h3><p>'+e(d.c)+'</p></div>'+
+'<div class="blk ask"><h3>The customer question it answers</h3><p>“'+e(d.q)+'”</p></div></div>'+
+'<aside class="proof" aria-label="Outliers for idea '+(n+1)+'"><div class="ph"><h3>Outliers behind this title</h3><span>'+d.r.length+' videos</span></div><div class="refs">'+
+d.r.map(function(r){return '<a class="ref'+(r[7]?' src':'')+'" href="https://youtube.com/watch?v='+r[0]+'" target="_blank" rel="noreferrer">'+
+'<span class="th"><img src="https://i.ytimg.com/vi/'+r[0]+'/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"></span>'+
+'<span class="rb"><span class="big"><strong>'+r[5]+'x</strong><span>their usual views</span>'+(r[7]?'<span class="tag">Title source</span>':'')+'</span>'+
+'<span class="rt">'+e(r[1])+'</span><span class="rm"><span>'+e(r[2])+'</span><span>'+r[3]+' subs</span><span>'+r[4]+' views</span><span>'+r[6]+'</span></span></span></a>'}).join('')+
+'</div><p class="pn">Channels under 100K subscribers, published in the last 3 months. Multiplier is views against that channel’s normal. vidIQ data from 2–3 October 2026. Titles are drafts until you sign them off.</p></aside></div></section>';
+var b=document.createElement('button');b.className='tab';b.type='button';b.innerHTML='<b>'+(n+1)+'</b><span>'+e(d.sh)+'</span>';b.onclick=function(){go(n)};T.appendChild(b);
+});
+S.innerHTML=h;
+var sl=[].slice.call(S.children),i=-1;
+function go(n){n=Math.max(0,Math.min(sl.length-1,n));if(n===i)return;
+sl.forEach(function(s,k){s.classList.toggle('on',k===n);s.setAttribute('aria-hidden',k===n?'false':'true');if(k===n)s.scrollTop=0});
+[].forEach.call(T.children,function(t,k){t.setAttribute('aria-current',k===n?'true':'false')});
+C.textContent=(n+1)+' / '+sl.length;i=n;try{history.replaceState(null,'','#'+(n+1))}catch(x){}}
+document.getElementById('prev').onclick=function(){go(i-1)};
+document.getElementById('next').onclick=function(){go(i+1)};
+document.addEventListener('keydown',function(ev){if(ev.key==='ArrowRight'||ev.key==='PageDown')go(i+1);if(ev.key==='ArrowLeft'||ev.key==='PageUp')go(i-1)});
+var x0=null,y0=0;document.addEventListener('touchstart',function(ev){x0=ev.touches[0].clientX;y0=ev.touches[0].clientY},{passive:true});
+document.addEventListener('touchend',function(ev){if(x0===null)return;var dx=ev.changedTouches[0].clientX-x0,dy=ev.changedTouches[0].clientY-y0;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)go(dx<0?i+1:i-1);x0=null},{passive:true});
+document.getElementById('present').onclick=function(){var d=document.documentElement;if(!document.fullscreenElement){if(d.requestFullscreen)d.requestFullscreen().catch(function(){})}else document.exitFullscreen()};
+var hn=parseInt(location.hash.slice(1),10);go(isNaN(hn)?0:hn-1);
 })();
 </script>
 </body>
